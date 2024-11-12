@@ -1,5 +1,4 @@
 import { Image, SimpleGrid } from "@chakra-ui/react";
-import React from "react";
 import useScreenshots from "../hooks/useScreenshots";
 import getCroppedImageUrl from "../services/image-url";
 
@@ -17,7 +16,7 @@ const GameScreenshots = ({ gameId }: Props) => {
   const screenshots = data?.results;
 
   return screenshots ? (
-    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
+    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5} marginTop={5}>
       {screenshots.map((screenshot) => (
         <Image key={screenshot.id} src={getCroppedImageUrl(screenshot.image)} />
       ))}
